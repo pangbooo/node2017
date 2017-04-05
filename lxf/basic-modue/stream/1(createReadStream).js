@@ -10,7 +10,7 @@ var rs = fs.createReadStream('sample.txt','utf-8');
 rs.on('data', function(chunk){
 	console.log('DATA...');
 	console.log(chunk)
-})
+});
 
 //end事件表示这个流已经到末尾了，没有数据可以读取了
 rs.on('end', function(){
@@ -20,4 +20,4 @@ rs.on('end', function(){
 //error事件表示出错了
 rs.on('error', function(err){
 	console.log('error: ' + err)
-})
+});
