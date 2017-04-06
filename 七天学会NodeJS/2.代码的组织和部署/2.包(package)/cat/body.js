@@ -2,4 +2,6 @@ function create(){
     console.log('body')
 }
 
-module.exports = create;
+module.exports = {
+    create : create
+};
