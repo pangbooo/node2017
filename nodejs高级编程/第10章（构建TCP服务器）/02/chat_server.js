@@ -17,7 +17,7 @@ server.on('connection', function (socket) {
         })
     });
 
-    socket.on('close', function () {
+    socket.on('close', function () { //关闭后删除连接
         console.log('connection closed');
         var index = socket.indexOf(socket);
         socket.splice(index,1)
