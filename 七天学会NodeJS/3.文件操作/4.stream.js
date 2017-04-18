@@ -1,3 +1,7 @@
-/**
- * Created by Administrator on 2017/4/17.
- */
+var fs = require('fs');
+
+var rs = fs.createReadStream(path);
+rs.on('data', function (chunk) {
+    dosomething(chunk)
+});
+
