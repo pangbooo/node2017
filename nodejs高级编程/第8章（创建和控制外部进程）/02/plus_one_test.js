@@ -12,7 +12,7 @@ setInterval(function () {
     //将该随机数发送到子进程
     child.stdin.write(number + '\n');
 
-    //获得子进程的响应并打印出来
+    //获得子进程的响应并打印出来 (等待子进程返回一个字符串)
     child.stdout.once('data', function (data) {
         console.log('child replied to ' + number + ' with ' + data)
     })
