@@ -1,10 +1,8 @@
 var connect = require('connect');
 
 //导入中间件
-var helloWorld = require('./hello_world');
+var replyText = require('./reply_text');
 
 var app = connect();
-
-app.use(helloWorld);
-
+app.use(replyText('Hello World 123'));
 app.listen(8080);
