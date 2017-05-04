@@ -1,6 +1,6 @@
 function errorCreator(){
     return function (req,res, next) {
-        throw new Error('this is an error')
+       next(new Error('this is an error'))
     }
 }
 
