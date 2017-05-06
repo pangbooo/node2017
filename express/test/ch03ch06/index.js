@@ -24,8 +24,7 @@ var fortunes = [
 ];
 
 app.get('/', function (req,res) {
-   //res.type('html');
-   // res.send('Meadowlark Travl');
+
     res.render('home');
 });
 
@@ -43,8 +42,20 @@ app.get('/noLayout', function (req,res) {
 });
 
 //使用定制的布局渲染视图
-app.get('custom-layout', function (req,res) {
-   res.render('custom-layout', {layout:custom})
+app.get('/customLayout', function (req,res) {
+   res.render('custom-layout', {layout:'custom'})
+});
+
+//渲染纯文本输出
+app.get('/test', function (req,res) {
+    res.type('text/plain');
+    res.send('this is a test');
+});
+
+//添加错误处理程序
+app.use(function (err, req, res, next) {
+   console.log(err.stack);
+    res.status(500).render(500);
 });
 
 //404页面
