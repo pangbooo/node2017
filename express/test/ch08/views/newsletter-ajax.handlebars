@@ -34,6 +34,7 @@
                 $.ajax({
                     url: action,
                     type: 'POST',
+                    data:{name:'123'},
                     success: function(data){
                         console.log(data);
                         if(data.success){

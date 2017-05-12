@@ -1,5 +1,6 @@
 var express = require('express');
 var express = require('express');
+var credentials = require('./credentials')
 var app = express();
 
 // 设置 handlebars 视图引擎
@@ -32,12 +33,14 @@ app.use(function (req,res,next) {
     delete req.session.flash;
     next();
 });
-
+app.get('/newsletter-ajax', function (req,res) {
+   res.render('newsletter-ajax')
+});
 app.post('/newsletter', function (req,res) {
     var name = req.body.name || '',
         email = req.body.email || '';
     //输入验证
-    if( !email.match(VALID_EMAIL_REGEX)){
+    if( true ){
         if(req.xhr){
             return res.json({error:'Invalid name email address'})
         }

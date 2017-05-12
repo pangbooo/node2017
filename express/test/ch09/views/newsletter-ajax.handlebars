@@ -1,6 +1,6 @@
 <div class="formContainer">
     <form class="form-horizontal newsletterForm" role="form"
-          action="/process-ajax?form=newsletter" method="POST">
+          action="/newsletter?form=newsletter" method="POST">
         <input type="hidden" name="_csrf" value="{{csrf}}">
         <div class="form-group">
             <label for="fieldName" class="col-sm-2 control-label">Name</label>
@@ -23,7 +23,12 @@
         </div>
     </form>
 </div>
-
+{{#if flash}}
+    <div class="alert alert-dismissible alert-{{flash.type}}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;<button>
+            <strong>{{flash.intro}}</strong> {{{flash.message}}}
+    </div>
+{{/if}}
 {{#section 'jquery'}}
     <script>
         $(document).ready(function(){

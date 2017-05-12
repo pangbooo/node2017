@@ -52,6 +52,7 @@ app.post('/process', function (req, res) {
 
 app.post('/process-ajax', function (req, res) {
     if(req.xhr || req.accepts('json,html') === 'json'){
+        console.log(req.body);
         res.send({success: true})
     }else{
         res.send({error: 'error description'});
