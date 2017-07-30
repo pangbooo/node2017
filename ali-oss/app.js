@@ -45,18 +45,18 @@ co(function* () {
 //});
 
 //删除一个文件
-//co(function* () {
-//    var result = yield client.delete('goodsuploads/goods-entering.jpg');
-//    console.log(result);
-//}).catch(function (err) {
-//    console.log(err);
-//});
+co(function* () {
+   var result = yield client.delete('goodsuploads/ff_0.jpg');
+   console.log(result);
+}).catch(function (err) {
+   console.log(err);
+});
 
 //流式上传
-co(function* () {
+/*co(function* () {
     // use 'chunked encoding'
-    var stream = fs.createReadStream('goods-entering.jpg');
-    var result = yield client.putStream('attachment/goods-entering.jpg', stream);
+    var stream = fs.createReadStream('./dark-drops-motion-milk.jpg');
+    var result = yield client.putStream('goodsuploads/dark-drops-motion-milk.jpg', stream);
     console.log(result);
     // don't use 'chunked encoding'
     //var stream = fs.createReadStream('local-file');
@@ -66,4 +66,4 @@ co(function* () {
     //console.log(result);
 }).catch(function (err) {
     console.log(err);
-});
+});*/
